@@ -1,4 +1,5 @@
 #!/bin/bash
+# Remaining setup: zsh customization, neovim
 
 # replace core files on new machine
 cp ./files/.zshrc ~/.zshrc
