@@ -42,10 +42,11 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<Tab><Tab>"] = cmp.mapping.confirm({ select = true }),
+				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
+				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				-- { name = "buffer" }, -- text within current buffer
@@ -58,6 +59,10 @@ return {
 					maxwidth = 50,
 					ellipsis_char = "...",
 				}),
+			},
+
+			experimental = {
+				ghost_text = true,
 			},
 		})
 	end,
