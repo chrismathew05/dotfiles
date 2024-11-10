@@ -1,10 +1,11 @@
 ALL_LANG_SETTINGS = {
-	python = { lsp = { "pyright" }, fmt = { "black", "ruff" }, lint = { "ruff" }, dap = { "debugpy" } },
+	python = { lsp = { "pyright" }, fmt = { "black", "ruff", "isort" }, lint = { "ruff" }, dap = { "debugpy" } },
 	javascript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
 	typescript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
 	html = { lsp = { "html-lsp" }, fmt = { "prettier" }, lint = { "htmlhint" } },
 	lua = { lsp = { "lua-language-server" }, fmt = { "stylua" }, lint = { "selene" } },
 	json = { lsp = { "json-lsp" }, fmt = { "prettier" }, lint = { "jsonlint" } },
+	dockerfile = { lsp = { "dockerfile-language-server" }, fmt = { "prettier" }, lint = { "hadolint" } },
 }
 
 -- get list of all tools outlined in lang settings above

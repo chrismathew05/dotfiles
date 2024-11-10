@@ -11,14 +11,6 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 
-# functions
-gssh () {
-  # adds Github ssh key to ssh-agent
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_ed25519
-  echo "Github SSH key added to ssh-agent"
-}
-
 # aliases
 alias c=clear
 alias bcat=batcat
