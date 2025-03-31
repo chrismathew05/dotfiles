@@ -1,11 +1,20 @@
 ALL_LANG_SETTINGS = {
-	python = { lsp = { "pyright" }, fmt = { "black", "ruff", "isort" }, lint = { "ruff" }, dap = { "debugpy" } },
+	python = { lsp = { "pyright" }, fmt = { "isort", "black", "ruff" }, lint = { "ruff" }, dap = { "debugpy" } },
 	javascript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
 	typescript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
+	css = { lsp = { "tailwindcss-language-server" }, fmt = { "prettier" }, lint = { "stylelint" } },
+	typescriptreact = {
+		lsp = { "typescript-language-server", "tailwindcss-language-server" },
+		fmt = { "prettier" },
+		lint = { "eslint_d" },
+	},
 	html = { lsp = { "html-lsp" }, fmt = { "prettier" }, lint = { "htmlhint" } },
 	lua = { lsp = { "lua-language-server" }, fmt = { "stylua" }, lint = { "selene" } },
-	json = { lsp = { "json-lsp" }, fmt = { "prettier" }, lint = { "jsonlint" } },
+	json = { lsp = { "json-lsp" }, fmt = { "fixjson" }, lint = { "jsonlint" } },
 	dockerfile = { lsp = { "dockerfile-language-server" }, fmt = { "prettier" }, lint = { "hadolint" } },
+	yaml = { lsp = { "docker-compose-language-service" }, fmt = { "prettier" } },
+	sh = { lsp = { "bash-language-server" }, fmt = { "shfmt" }, lint = { "shellcheck" } },
+	zsh = { lsp = { "bash-language-server" }, fmt = { "shfmt" }, lint = { "shellcheck" } },
 }
 
 -- get list of all tools outlined in lang settings above
@@ -36,6 +45,11 @@ local function format_file()
 		local formatters = lang_settings["fmt"]
 		for _, formatter in pairs(formatters) do
 			local cmd = "silent !" .. formatter .. " " .. filename
+
+			if formatter == "fixjson" or formatter == "prettier" then
+				cmd = cmd .. " --write"
+			end
+
 			vim.cmd(cmd)
 		end
 	else
@@ -161,5 +175,26 @@ return {
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	},
+	{
+		"laytan/tailwind-sorter.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
+		build = "cd formatter && npm ci && npm run build",
+		config = function()
+			require("tailwind-sorter").setup({
+				on_save_enabled = true,
+				on_save_pattern = {
+					"*.html",
+					"*.js",
+					"*.jsx",
+					"*.tsx",
+					"*.twig",
+					"*.hbs",
+					"*.php",
+					"*.heex",
+					"*.astro",
+				},
+			})
+		end,
 	},
 }

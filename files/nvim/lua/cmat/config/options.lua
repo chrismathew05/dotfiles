@@ -5,9 +5,13 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+-- set to true or false etc.
+-- spell = false, -- sets vim.opt.spell
+-- signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+
 -- tabs & indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
