@@ -12,3 +12,9 @@ Then I can run the following scripts to mimic my dev environment on another mach
 Follow instructions [here](https://www.reddit.com/r/linux4noobs/comments/m9bpbw/how_to_install_nerdfonts_in_wsl/) to install the desired nerd font. 
 
 This was a useful [link](https://www.youtube.com/watch?v=UVcC5ifbXL8&list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft&index=8) to setup LSP in Neovim.
+
+TO UPDATE NVIM:
+https://github.com/neovim/neovim/releases
+
+TO UPDATE NEOVIM VERSION:
+https://github.com/neovim/neovim/blob/master/BUILD.md
