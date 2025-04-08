@@ -13,8 +13,5 @@ Follow instructions [here](https://www.reddit.com/r/linux4noobs/comments/m9bpbw/
 
 This was a useful [link](https://www.youtube.com/watch?v=UVcC5ifbXL8&list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft&index=8) to setup LSP in Neovim.
 
-TO UPDATE NVIM:
-https://github.com/neovim/neovim/releases
-
 TO UPDATE NEOVIM VERSION:
 https://github.com/neovim/neovim/blob/master/BUILD.md
