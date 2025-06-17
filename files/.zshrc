@@ -105,6 +105,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# alias below allows for simple LLM querying
+# https://github.com/simonw/llm
+yo() {
+  llm -m gemini-2.0-flash "Be concise. $*"
+}
+
+
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

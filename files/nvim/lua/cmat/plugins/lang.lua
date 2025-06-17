@@ -1,7 +1,20 @@
 ALL_LANG_SETTINGS = {
 	python = { lsp = { "pyright" }, fmt = { "isort", "black", "ruff" }, lint = { "ruff" }, dap = { "debugpy" } },
-	javascript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
-	typescript = { lsp = { "typescript-language-server" }, fmt = { "prettier" }, lint = { "eslint_d" } },
+	javascriptreact = {
+		lsp = { "typescript-language-server", "tailwindcss-language-server" },
+		fmt = { "prettier" },
+		lint = { "eslint_d" },
+	},
+	javascript = {
+		lsp = { "typescript-language-server", "tailwindcss-language-server" },
+		fmt = { "prettier" },
+		lint = { "eslint_d" },
+	},
+	typescript = {
+		lsp = { "typescript-language-server", "tailwindcss-language-server" },
+		fmt = { "prettier" },
+		lint = { "eslint_d" },
+	},
 	css = { lsp = { "tailwindcss-language-server" }, fmt = { "prettier" }, lint = { "stylelint" } },
 	typescriptreact = {
 		lsp = { "typescript-language-server", "tailwindcss-language-server" },
@@ -184,10 +197,10 @@ return {
 			require("tailwind-sorter").setup({
 				on_save_enabled = true,
 				on_save_pattern = {
-					"*.html",
+					-- "*.html",
 					"*.js",
-					"*.jsx",
-					"*.tsx",
+					-- "*.jsx",
+					-- "*.tsx",
 					"*.twig",
 					"*.hbs",
 					"*.php",
