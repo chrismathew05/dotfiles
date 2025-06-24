@@ -15,7 +15,7 @@ ALL_LANG_SETTINGS = {
 		fmt = { "prettier" },
 		lint = { "eslint_d" },
 	},
-	css = { lsp = { "tailwindcss-language-server" }, fmt = { "prettier" }, lint = { "stylelint" } },
+	css = { lsp = { "tailwindcss-language-server" }, fmt = { "prettier" } },
 	typescriptreact = {
 		lsp = { "typescript-language-server", "tailwindcss-language-server" },
 		fmt = { "prettier" },
