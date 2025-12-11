@@ -28,6 +28,9 @@ ALL_LANG_SETTINGS = {
 	yaml = { lsp = { "docker-compose-language-service" }, fmt = { "prettier" } },
 	sh = { lsp = { "bash-language-server" }, fmt = { "shfmt" }, lint = { "shellcheck" } },
 	zsh = { lsp = { "bash-language-server" }, fmt = { "shfmt" }, lint = { "shellcheck" } },
+	tf = { lsp = { "terraform-ls" }, fmt = { "terraform" }, lint = { "tflint" } },
+	terraform = { lsp = { "terraform-ls" }, fmt = { "terraform" }, lint = { "tflint" } },
+	cpp = { lsp = { "clangd" }, fmt = { "clang-format" }, lint = { "cpplint" } },
 }
 
 -- get list of all tools outlined in lang settings above
@@ -98,11 +101,9 @@ return {
 				ensure_installed = get_all_tools(),
 			})
 
-			require("mason-lspconfig").setup()
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
-					require("lspconfig")[server_name].setup({})
-				end,
+			require("mason").setup()
+			require("mason-lspconfig").setup({
+				ensure_installed = ALL_LANG_SETTINGS,
 			})
 		end,
 	},

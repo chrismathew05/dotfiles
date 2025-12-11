@@ -16,6 +16,7 @@ alias c=clear
 alias bcat=batcat
 alias v=nvim
 alias mkdir=mkdir -p
+alias tf=terraform
 
 # autosuggest settings
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)

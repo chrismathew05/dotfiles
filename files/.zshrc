@@ -106,10 +106,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# alias below allows for simple LLM querying
+# command below allows for simple LLM querying
 # https://github.com/simonw/llm
 yo() {
   llm -m gemini-2.0-flash "Be concise. $*"
+}
+
+# command opens up neovim config for editing
+nvc() {
+  v ~/.config/nvim/
 }
 
 
@@ -123,3 +128,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$PATH:/home/chrismathew/.nvm/versions/node/v22.2.0/bin:$HOME/.local/bin"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
