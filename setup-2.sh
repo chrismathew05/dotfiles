@@ -13,7 +13,7 @@ cp ./files/customize.zsh ~/.oh-my-zsh/custom/customize.zsh
 
 # neovim - https://github.com/neovim/neovim/blob/master/BUILD.md
 sudo apt-get install ninja-build gettext cmake unzip curl build-essential
-git clone https://github.com/neovim/neovim ~/
+git clone https://github.com/neovim/neovim ~/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
@@ -28,9 +28,5 @@ cp -r ./files/nvim/ ~/.config/nvim/
 
 # finalize
 source ~/.zshrc
-
-# to copy paste between neovim and anywhere
-# https://github.com/equalsraf/win32yank/issues/9
-winget.exe install win32yank
 
 echo "Setup complete!"
