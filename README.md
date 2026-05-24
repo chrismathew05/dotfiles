@@ -15,3 +15,19 @@ This was a useful [link](https://www.youtube.com/watch?v=UVcC5ifbXL8&list=PLx2ks
 
 TO UPDATE NEOVIM VERSION:
 https://github.com/neovim/neovim/blob/master/BUILD.md
+
+* git
+* alacritty
+* neovim (lazyvim, mason/lspconfig/treesitter, telescope, codeium, avante, etc.)
+* tmux
+* zsh (ohmyzsh)
+* powerlevel10k
+* ripgrep
+* python (uv), node (npm)
+* claude cli
+* gemini - simonw/llm
+* ksnip
+* openbox/i3
+* proton + ublock origin + librewolf
+* libreoffice
+* docker
